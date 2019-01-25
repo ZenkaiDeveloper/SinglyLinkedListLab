@@ -56,3 +56,39 @@ test("The shift method changes the head to the second element on the old list", 
   list.shift();
   expect(list.head.val).toBe(23);
 })
+
+test('The unshift method takes in a value, creates a node and then inserts it in the front of the list.', () => {
+  list.push(32);
+  list.push(34);
+  list.push(9);
+  list.push(4);
+  list.push(6);
+  list.unshift(88);
+  expect(list.head.val).toBe(88);
+})
+
+test("get gets a value at a specific index", () => {
+  list.push(32);
+  list.push(34);
+  list.push(91);
+  list.push(42);
+  list.push(60);
+  expect(list.get(4).val).toBe(42);
+})
+
+test('The insert method creates a node and inserts the node after a certain index', () => {
+  list.push(32);
+  list.push(34);
+  list.push(41);
+  list.insert(2, 89);
+  expect(list.get(2)).toBe(89);
+})
+
+test('The remove method removes a node at a certain index', () => {
+  list.push(32);
+  list.push(34);
+  list.push(41);
+  list.push(71);
+  list.remove(2)
+  expect(list.get(2)).toBe(41);
+})
